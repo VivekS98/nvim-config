@@ -48,17 +48,12 @@ require("flutter-tools").setup {
       foreground = false, -- highlight the foreground
       virtual_text = true, -- show the highlight using virtual text
       virtual_text_str = "■", -- the virtual text character to highlight
-    },
-    capabilities = function(config)
-      config.specificThingIDontWant = false
-      return config
-    end,
-    -- see the link below for details on each option:
+    }, -- see the link below for details on each option:
     -- https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#client-workspace-configuration
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
-      analysisExcludedFolders = { "<path-to-flutter-sdk-packages>" },
+      analysisExcludedFolders = { "/opt/homebrew/bin/flutter" },
       renameFilesWithClasses = "prompt", -- "always"
       enableSnippets = true,
     }

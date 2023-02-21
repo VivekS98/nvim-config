@@ -21,7 +21,7 @@ local astro_plugins = {
   -- Flutter
   ["akinsho/flutter-tools.nvim"] = {
     setup = function()
-      astronvim.lazy_load_commands("flutter-tools", {
+      astronvim.lazy_load_commands("flutter-tools.nvim", {
         "FlutterRun",
         "FlutterDevices",
         "FlutterEmulators",
