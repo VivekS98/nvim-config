@@ -19,9 +19,16 @@ require("flutter-tools").setup {
       device = false,
     }
   },
+  debugger = { -- integrate with nvim dap + install dart code debugger
+    enabled = false,
+    run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+    -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
+    -- see |:help dap.set_exception_breakpoints()| for more info
+    exception_breakpoints = {}
+  },
   flutter_path = "/opt/homebrew/bin/flutter",
   widget_guides = {
-    enabled = false,
+    enabled = true,
   },
   closing_tags = {
     highlight = "ErrorMsg", -- highlight for the closing tag
@@ -53,7 +60,6 @@ require("flutter-tools").setup {
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
-      analysisExcludedFolders = { "/opt/homebrew/bin/flutter" },
       renameFilesWithClasses = "prompt", -- "always"
       enableSnippets = true,
     }
