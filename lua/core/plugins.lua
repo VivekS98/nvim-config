@@ -20,9 +20,7 @@ local astro_plugins = {
   },
   -- Flutter
   ["akinsho/flutter-tools.nvim"] = {
-    module = "flutter-tools",
     setup = function()
-      table.insert(astronvim.file_plugins, "flutter-tools")
       astronvim.lazy_load_commands("flutter-tools", {
         "FlutterRun",
         "FlutterDevices",
@@ -41,7 +39,6 @@ local astro_plugins = {
         "FlutterReanalyze"
       })
     end,
-    run = function() require("flutter-tools.install").update { with_sync = true } () end,
     config = function() require "configs.flutter-tools" end,
   },
   -- Optimiser
